@@ -2,7 +2,6 @@ package com.devsuperior.dslist.entities;
 
 import java.util.Objects;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,25 +16,22 @@ public class Game {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String title;
-	
-	@Column(name = "game_year")
-	private Integer year;
+	private Integer releaseYear;
 	private String genre;
 	private String platform;
 	private String imgUrl;
 	private String shortDescription;
 	private String longDescription;
 	
-	
 	public Game() {
 		
 	}
 
-	public Game(Long id, String title, Integer year, String genre, String platform, String imgUrl,
+	public Game(Long id, String title, Integer releaseYear, String genre, String platform, String imgUrl,
 			String shortDescription, String longDescription) {
 		this.id = id;
 		this.title = title;
-		this.year = year;
+		this.releaseYear = releaseYear;
 		this.genre = genre;
 		this.platform = platform;
 		this.imgUrl = imgUrl;
@@ -59,12 +55,12 @@ public class Game {
 		this.title = title;
 	}
 
-	public Integer getYear() {
-		return year;
+	public Integer getReleaseYear() {
+		return releaseYear;
 	}
 
-	public void setYear(Integer year) {
-		this.year = year;
+	public void setReleaseYear(Integer releaseYear) {
+		this.releaseYear = releaseYear;
 	}
 
 	public String getGenre() {
